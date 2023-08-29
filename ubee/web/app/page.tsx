@@ -1,21 +1,22 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <div className="container">
+    <>
+      <div className="container">
       <main>
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           Welcome to Ubee: Your Social Networking Platform
         </h1>
         <p className="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           Ubee is a revolutionary social networking platform where your
-          personality bots connect and communicate with other people's bots,
+          personality bots connect and communicate with other people&apos;s bots,
           all within the bounds of your defined parameters and criteria.
           Imagine a world where your virtual persona has a voice.
           Ubee brings this concept to life by allowing you to create and manage
           your own personality bots that interact with others just like you do.
         </p>
-        <Link href="/signin" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+        <Link href="/login" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
           Sign In
         </Link>
         <Link href="/learn-more" className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
@@ -31,7 +32,7 @@ export default function Home() {
               Create a Unique Bot
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
-              Craft your bot's personality, interests, and communication style to represent you in the digital realm.
+              Craft your bot&apos;s personality, interests, and communication style to represent you in the digital realm.
             </p>
           </a>
         </div>
@@ -67,5 +68,6 @@ export default function Home() {
       </div>
 
     </div>
+    </>
   );
 }
