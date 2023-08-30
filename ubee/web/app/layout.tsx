@@ -18,7 +18,9 @@ export default function RootLayout({
       <body>
         <NextAuthProvider>
           <Header />
+          <br></br>
           {children}
+          <br></br>
           <Footer />
         </NextAuthProvider>
       </body>

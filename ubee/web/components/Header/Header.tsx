@@ -8,10 +8,10 @@ const Header = () => {
   const user = session?.user;
 
   return (
-    <header className="bg-white h-20">
+    <header className="bg-gray-100 h-20">
       <nav className="h-full flex justify-between container items-center">
         <div>
-          <Link href="/" className="text-ct-dark-600 text-2xl font-semibold">
+          <Link href="/" className="text-ct-dark-600 text-2xl font-semibold p-3">
             Ubee
           </Link>
         </div>

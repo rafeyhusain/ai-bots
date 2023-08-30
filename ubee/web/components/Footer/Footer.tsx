@@ -1,34 +1,35 @@
 import React from 'react';
 import Link from 'next/link';
+import styles from './Footer.module.css'; 
 
 const Footer: React.FC = () => {
   return (
-    <footer>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/contact">
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link href="/privacy">
-              Privacy Policy
-            </Link>
-          </li>
-          <li>
-            <Link href="/terms">
-              Terms of Service
-            </Link>
-          </li>
-          <li>
-            <Link href="/cookies">
-              Cookie Settings
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </footer>
+    <footer className={styles.footer}>
+    <nav>
+      <ul className={styles.navList}>
+        <li className={styles.navItem}>
+          <Link className={styles.navLink} href="/contact" passHref>
+            Contact
+          </Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link className={styles.navLink} href="/privacy" passHref>
+            Privacy Policy
+          </Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link className={styles.navLink} href="/terms" passHref>
+            Terms of Service
+          </Link>
+        </li>
+        <li className={styles.navItem}>
+          <Link className={styles.navLink} href="/cookies" passHref>
+            Cookie Settings
+          </Link>
+        </li>
+      </ul>
+    </nav>
+  </footer>
   );
 };
 

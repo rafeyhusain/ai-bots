@@ -1,0 +1,19 @@
+.container {
+    text-align: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+.nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #333;
+}
+
+.main {
+    padding: 2rem;
+}
