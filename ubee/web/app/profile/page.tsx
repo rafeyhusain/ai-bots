@@ -8,11 +8,11 @@ export default async function Profile() {
   return (
     <>
       <section className="bg-ct-blue-600  min-h-screen pt-20">
+        <p className="mb-3 text-5xl text-center font-semibold">
+          Profile
+        </p>
         <div className="max-w-4xl mx-auto bg-ct-dark-100 rounded-md h-[20rem] flex justify-center items-center">
           <div>
-            <p className="mb-3 text-5xl text-center font-semibold">
-              Profile Page
-            </p>
             {!user ? (
               <p>Loading...</p>
             ) : (
