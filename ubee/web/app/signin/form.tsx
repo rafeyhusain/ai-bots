@@ -1,6 +1,7 @@
 "use client";
 
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
@@ -14,7 +15,7 @@ export const SignInForm = () => {
   const [error, setError] = useState("");
 
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/profile";
+  const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -97,7 +98,7 @@ export const SignInForm = () => {
         onClick={() => signIn("google", { callbackUrl })}
         role="button"
       >
-        <img
+        <Image
           className="pr-2"
           src="/images/google.svg"
           alt=""
@@ -111,7 +112,7 @@ export const SignInForm = () => {
         onClick={() => signIn("github", { callbackUrl })}
         role="button"
       >
-        <img
+        <Image
           className="pr-2"
           src="/images/github.svg"
           alt=""

@@ -32,3 +32,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Read the entire article here: [https://codevoweb.com/nextjs-add-google-and-github-oauth2-using-nextauth-js/](https://codevoweb.com/nextjs-add-google-and-github-oauth2-using-nextauth-js/)
+
+```
+docker-compose up
+npx prisma migrate dev --name init
+```
+
+To create migration
+```
+prisma generate
+prisma migrate dev --name your_migration_name
+prisma db push
+```

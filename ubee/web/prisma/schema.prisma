@@ -21,6 +21,7 @@ model User {
   updatedAt     DateTime  @updatedAt
   accounts      Account[]
   sessions      Session[]
+  bots          Bot[]
 
   @@map("users")
 }
@@ -67,4 +68,67 @@ model VerificationRequest {
   updatedAt  DateTime @updatedAt
 
   @@unique([identifier, token])
+}
+
+model Bot {
+  id          String       @id @default(cuid())
+  name        String
+  description String
+  personas    Persona[]
+  paramValues ParamValue[]
+  userId      String       @map("user_id")
+  user        User?        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@index([userId], name: "Bot_UserId_Index")
+  @@map("bot")
+}
+
+model Persona {
+  id        String   @id @default(cuid())
+  bot       Bot      @relation(fields: [botId], references: [id])
+  botId     String   @map("bot_id")
+  fileName  String   @map("file_name")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([botId], name: "Persona_BotId_Index")
+  @@map("persona")
+}
+
+model Param {
+  id          String       @id @default(cuid())
+  name        String
+  paramType   ParamType    @map("param_type")
+  paramValues ParamValue[]
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@map("param")
+}
+
+model ParamValue {
+  id        String   @id @default(cuid())
+  bot       Bot      @relation(fields: [botId], references: [id])
+  botId     String   @map("bot_id")
+  param     Param    @relation(fields: [paramId], references: [id])
+  paramId   String   @map("param_id")
+  value     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([botId], name: "ParamValue_BotId_Index")
+  @@index([paramId], name: "ParamValue_ParamId_Index")
+  @@map("param_value")
+}
+
+enum ParamType {
+  String
+  Number
+  Boolean
+  Object
+  Array
+
+  @@map("param_type")
 }
